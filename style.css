@@ -1,0 +1,105 @@
+body {
+	background: linear-gradient(to bottom right, #6badd0, #8d6da1); /* 背景渐变紫 */
+	margin: 0;
+	padding: 0;
+	height: 100vh; /* 设置高度为视窗高度 */
+	display: flex; /* 使用 flex 布局 */
+	justify-content: center; /* 水平居中 */
+	align-items: center; /* 垂直居中 */
+}
+
+.logo {
+	width: 300px; /* LOGO 宽度 */
+	height: 300px; /* LOGO 高度 */
+	background: url('image/图标/logo.svg') no-repeat center center; /* 背景图片 */
+	background-size: cover; /* 缩放背景图片 */
+	animation: expand 2s ease-in-out; /* 使用动画效果 */
+}
+.logo>span{
+	position: fixed;
+	bottom:20%;
+	font-family: Arial, sans-serif;
+	font-variant: small-caps;
+	font-size: 66px;
+	color: #8d6da1;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5); 
+	transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+}
+.logo>span:hover{
+	transform: scale(1.05) rotate(5deg); /* 鼠标悬停时进行放大选择和旋转 */
+}
+
+@keyframes expand {
+	0% {transform: scale(0);} /* 开始时缩小 */
+	50% {transform: scale(1.2);} /* 中间时放大 */
+	100% {transform: scale(1);} /* 结束时恢复原大小 */
+}
+/* 加载圈样式 */
+.loading {
+  display: none;
+  position: fixed; /* 使其始终在屏幕中间 */
+  z-index: 999; /* 设置z-index以覆盖其他元素 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CSS3动画旋转 */
+.spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: #8d6da1;
+  animation: spin 2s linear infinite;
+  animation-direction: reverse; /* 循环动画，使其反向旋转 */
+  transform-origin: center;
+  animation-timing-function: ease-in-out;
+}
+
+/* 呼吸灯效果 */
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    filter: brightness(1.5);
+  }
+  50% {
+    transform: scale(1.0);
+    filter: brightness(1.0);
+  }
+  100% {
+    transform: scale(0.8);
+    filter: brightness(1.5);
+  }
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+  animation: pulse 2s infinite;
+  transform-origin: center;
+}
+
+/* 循环动画 */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.blur {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: blink 1s linear infinite;
+}
+
+/* 动画设置 */
+@keyframes blink {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

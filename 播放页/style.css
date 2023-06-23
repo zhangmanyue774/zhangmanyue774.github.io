@@ -1,0 +1,467 @@
+/* 设置全局 div 的样式 */
+/* 设置全局 div 的样式 */
+* {
+  user-select: none;
+}
+.blur-background {
+	position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   z-index: -1; /* 放到最底层，让其他元素在它上面 */
+   background-size: cover;
+}
+
+/* 设置在全局div下层的主体内容的样式 */
+.blur-main {
+   opacity: 0.5;
+   height: 100%;
+   width: 100%;
+   /* 添加模糊效果 */
+   filter: blur(17px);
+   background-repeat: no-repeat;
+    background-size: 100%;
+	background-position: center;  /* 将背景图片在容器中居中对齐 */
+} 
+/* 强化模糊效果 */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.9;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,1);
+	backdrop-filter: blur(5px); /* 添加模糊效果 */
+	mix-blend-mode: multiply;  /* 叠加模式：正片叠底 */
+}
+/* 歌手图片 */
+.image{
+	position: absolute;
+	width: 388px;
+	height: 388px;
+	position: absolute;
+	margin-top: 200px;
+	left: 188px;
+	opacity: 0.9;
+	border-radius: 10px;
+	border: none;
+	opacity: 0.6;
+}
+.Music_box{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height:100px;
+}
+#Music_Button{
+	display: flex;
+	position: absolute;
+	bottom: 13px;
+	left: 43.5%;
+}
+#Music_Button div{
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+#Music_Button div:hover{
+	opacity: 1;
+	transform: scale(1.05);
+}
+/* 播放进度条 */
+.player_progress__inner{
+	position: absolute;
+	display: flex;
+	top: 15px;
+	width: 78%;
+	left: 11.23409255319149%;
+	padding-top: 12px;
+	height: 8px;
+	cursor: pointer;
+}
+/* 播放滑块 */
+.player_progress__play{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 20px;
+	width: 0;
+	}
+.player_progress__dot{
+  position: absolute;
+  right: -15px; /* 调整位置 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url("svg/写真 (1).svg");
+  background-origin: border-box; /* 将背景图片的原点设置为盒子的边框 */
+  animation: blink 500ms infinite;
+}
+/* 滑块闪烁 */
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+  %30{
+	  opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  %80{
+  	  opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+.hidden{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left:0;	
+	overflow: hidden;
+}
+#canvas{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin-top: 1px;
+}
+.svg_rage{
+	position: absolute;
+	top: 46%;
+	right: 0;
+}
+/* 播放按钮 */
+#play{
+	background: url("svg/播放.svg");;
+}
+#Pre{
+	margin-right: 10px;
+	background: url("svg/上一首.svg");
+}
+#Next{
+	margin-left: 10px;
+	background: url("svg/上一首.svg");
+	transform: rotate(180deg);
+}
+#Music_Button>#Next:hover{
+	transform: scale(1.05)rotate(180deg);
+}
+/* 左下角svg */
+.svg_lfft_bottom{
+	display: flex;
+	position: absolute;
+	bottom: 17px;
+	left: 10%;
+}
+.svg_lfft_bottom div{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	opacity: 0.8;
+	margin-left: 15px;
+}
+.svg_lfft_bottom div:hover{
+	opacity: 1;
+	transform: scale(1.05);
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+#left{
+	background: url("svg/xihuan (2).svg");
+}
+#right{
+	background: url("svg/xiazai.svg");
+}
+.logo{
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	background: url("svg/svg_logo.svg");
+	top: 0;
+	opacity: 0.3;
+}
+.logo:hover{
+	opacity: 0.8;
+}
+ /* 歌单*/
+.svg_right_bottom{
+	display: flex;
+	position: absolute;
+	bottom: 17px;
+	right: 10%;
+}
+.svg_right_bottom div{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	opacity: 0.8;
+	margin-right: 5px;
+}
+.svg_right_bottom div:hover{
+	opacity: 1;
+	transform: scale(1.05);
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+#Music_List{
+	background: url("svg/list.svg");
+}
+#Music_List_list{
+	position: absolute;
+	width: 350px;
+	height:100%;
+	/* background: plum; */
+	top:0;
+	right: -100%;
+	transition: all 0.5s ease-out;
+}
+body{
+	overflow: hidden;
+}
+.bottom_list{
+	display: flex;
+	position: absolute;
+	bottom: 17px;
+	right: 10%;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.bottom_list div{
+	width: 35px;
+	height: 35px;
+	margin-left:3px;
+}
+.bottom_list:hover{
+	opacity: 1;
+	transform: scale(1.05);
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+#back_button_svg{
+	background: url("svg/list.svg");
+}
+#back_button{
+	color: #8a8a8a;
+	transform: translateY(15%);
+}
+.list_top{
+	width: 300px;
+	position: absolute;
+	top: 30px;
+	left: 25px;
+	cursor: default;
+}
+.list_top div{
+	display: flex;
+	position: absolute;
+	height: 30px;
+	width: 60px;
+	right: 3px;
+	top: 20px;
+	border-radius: 30px;
+	background-color:plum;
+	font-weight: bold;
+	font-size: 10px;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+}
+.list_top div:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+/* 清空以及选中清空 */
+.list_top_lettle{
+	position: absolute;
+	top: 90px;
+	left: 25px;
+	width: 300px;
+	height: 25px;
+	color: darkgray;
+	cursor: default;
+}
+.delete{
+	display: flex;
+	position: absolute;
+	width: 70px;
+	height: 25px;
+	right: 0;
+	top: 0;
+}
+.delete>div{
+	width: 25px;
+	height: 25px;
+	margin-left: 8px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+.delete>div:hover{
+	opacity: 1;
+	transform: scale(1.05);
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+#select{
+	background: url("svg/多选.svg");
+}
+#delete{
+	background: url("svg/垃圾桶.svg");
+}
+
+.song_list {
+  position: absolute;
+  height: 605px;
+  width: 330px;
+  left: 18px;
+  top: 130px;
+  overflow-y: scroll;
+}
+
+.song_list > div {
+  display: flex;
+  align-items: center;
+  width: 310px;
+  height: 80px;
+  margin-top: 1px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+/* 列表内容部分 */
+.song_message div span{
+	position: absolute;
+	font-size: 15px;
+	margin-top: 20px;
+	cursor: default;
+}
+.song_message > div:first-child:hover{
+	text-shadow: 0 2px 5px plum;
+	/* box-shadow: 0 2px 5px plum; */
+	transform: scale(1.03);
+	color: plum;
+}
+.song_message div span:first-child{
+	font-weight: bold;
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.song_message>div{
+	position: absolute;
+}
+.song_message > div:first-child{
+	width: 200px;
+	height: 80px;
+}
+.song_message  div span:last-child{
+	color: #ababab;
+}
+.song_message>div:nth-child(2){
+	display: flex;
+	width: 120px;
+	height: 20px;
+	right: 0;
+}
+.song_message>div:nth-child(2) div{
+	margin-left: 5px;
+	width: 20px;
+	height: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.song_message>div:nth-child(2) div:hover{
+	opacity: 1;
+	transform: scale(1.05);
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+.song_message div div:nth-child(1){
+	background: url("svg/列表播放.svg");
+}
+.song_message div div:nth-child(2){
+	background: url("svg/列表喜欢.svg");
+}
+.song_message div div:nth-child(3){
+	background: url("svg/单曲删除.svg");
+}
+/* 侧滑条 */
+.song_list::-webkit-scrollbar {
+  width: 10px; /* 宽度 */
+  opacity: 0;
+}
+.song_list::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 10px; /* 边角的圆角半径 */
+}
+.song_list::-webkit-scrollbar-thumb:hover{
+	background: #b8b8b8;
+}
+
+.song_list::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+/* z-index变化*/
+body > *:not(.blur-background):not(#Music_List_list) {
+  transition: z-index 0.3s ease;
+}
+/* 用户信息 */
+.user_message{
+	display: flex;
+	position: absolute;
+	top: 50px;
+	right: 13%;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.user_message div{
+	width: 35px;
+	height: 35px;
+	opacity: 0.6;
+}
+.user_message div:hover{
+	transform: scale(1.05);
+	color: plum;
+	filter: invert(23%) sepia(69%) saturate(4314%) hue-rotate(305deg) brightness(107%) contrast(102%) hue-rotate(300deg) saturate(19%) drop-shadow(0px 0px 10px #DDA0DD);
+}
+#user_image{
+	margin-right: 6px;
+	width: 40px;
+	height: 40px;
+	border-radius: 30px;
+	overflow: hidden;
+}
+#user_image>img{
+	width: 40px;
+	height: 40px;
+}
+#username{
+	font-weight: bold;
+	font-size: 20px;
+	display: inline-block;
+	white-space: nowrap;
+	width: auto;
+	color: #8a8a8a;
+	margin-left: 3px;
+	transform: translateY(15%);
+}
+#back{
+	opacity: 0.5;
+	margin-left: 10px;
+	width: 39px;
+}
+/* 未登录下的覆盖层 */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 10000px;
+  height: 10000px;
+}

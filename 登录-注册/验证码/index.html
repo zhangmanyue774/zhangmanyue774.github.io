@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>One-Music 登录</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="../../favicon.ico">
+</head>
+<body>
+<header class="header">
+		<!-- 左侧logo和文字 -->
+		<div class="logo">
+			<a href="../前页/index.html">
+				<img src="svg_logo.svg" id=logo_svg"">
+			</a>
+		</div>
+		<!-- 右侧按钮 -->
+		<div class="Music_Hall_div">
+			<a href="../登录页/Login_Register.html" class="Music_Hall">红人音乐馆</a>
+		</div>
+		<div class="originality_div">
+			<a href="register.html" class="originality">创意中心</a>
+		</div>
+	</header>
+<body>
+	<!-- 登录控件 -->
+	<div class="form-container">
+	  <div class="form-wrapper">
+	    <form class="form">
+	      <div class="form-header">
+	        <span style="color:mediumpurple ;text-shadow: 2.3px 2.3px 5px plum; opacity: 0.7;"><strong>验证码登录</span>
+	        <img src="../../image/图标/退出.svg" alt="Close" class="close-icon">
+	      </div>
+		  <div id="error-msg">请输入合法的手机号码</div>
+	      <div class="form-group">
+	        <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+	      </div>
+	      <div class="form-group_2">
+	        <input type="text" id="code" name="code" placeholder="验证码" required>
+	        <div class="input-addon">
+	          <button type="button" id="get-code">获取验证码</button>
+	        </div>
+	      </div>
+	      <div class="form-check">
+	        <input type="checkbox" id="agreement" name="agreement">
+	        <label for="agreement">授权即同意&nbsp;</label>
+	        <a href="#">服务协议</a>
+	        <span>&nbsp;及&nbsp;</span>
+	        <a href="#">I-Music隐私保护指引</a>
+	      </div>
+		  <div class="login">
+			  <button type="button" id="login_lo">登录</button>
+		  </div>
+	      <div class="form-footer">
+	        <a href="../注册/index.html">没有账号？</a>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+
+</body>
+</html>
+<script src="main.js"></script>

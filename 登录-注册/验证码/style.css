@@ -1,0 +1,272 @@
+body {
+	background: linear-gradient(to bottom right, #6badd0, #8d6da1); /* 背景渐变紫 */
+	margin: 0;
+	padding: 0;
+	height: 100vh; /* 设置高度为视窗高度 */
+	display: flex; /* 使用 flex 布局 */
+	justify-content: center; /* 水平居中 */
+	align-items: center; /* 垂直居中 */
+}
+/* 导航栏效果 */
+.header {
+	background: linear-gradient(to bottom right, #6badd0, #8d6da1);
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+.header:hover{
+	opacity: 1;
+}
+/* LOGO */
+.logo{
+	width: 400px;
+	height: 100px;
+}
+.header a{
+	text-decoration: none;
+	color: #8d6da1;
+	font-size: 23px;
+	font-weight: bold;
+	font-family: 'FZYaoti';
+}
+.header a:hover{
+	color: azure;
+}
+.Music_Hall{
+	position: absolute; /* 将文本设置为绝对定位 */
+	top: 20%; /* 将文本距离div顶部的距离设为50% */
+	text-shadow: 2.3px 2.3px 5px plum;
+}
+.originality{
+	position: absolute; /* 将文本设置为绝对定位 */
+	bottom: 20%; /* 将文本距离div顶部的距离设为50% */
+	text-shadow: 2.3px 2.3px 5px plum;
+}
+.Music_Hall_div{
+	position: relative; 
+	width: 120px;
+	height: 98%;
+	margin-left: 450px;
+}
+.Music_Hall_div:hover{
+	background:linear-gradient(to bottom right, #8d6da1,#6badd0);
+	transform: scale(1.05);
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
+}
+.originality_div{
+	position: relative;
+	margin-right: 170px;
+	width: 110px;
+	height: 98%;
+}
+.originality_div:hover{
+	background:linear-gradient(to bottom right, #8d6da1,#6badd0);
+	transform: scale(1.05);
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
+}
+/* 登录控件 */
+.close-icon{
+	opacity: 1.5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-wrapper {
+  width: 400px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom right, #6badd0, #8d6da1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.form-header img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+.form-group input {
+  flex-grow: 0.8;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color:#8d6da1;
+  transition: border-color 0.3s ease-out;
+}
+.form-group input:hover{
+	box-shadow: 0 2px 10px plum; 
+	transform: scale(1.05);
+	text-shadow: 2.3px 2.3px 5px plum;
+}
+.form-group input:focus {
+  border-color: #8E44AD;
+  outline: none;
+}
+.form-group_2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px;
+	position: relative;
+	margin-right: 10px;
+}
+.form-group_2 input {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #fff;
+	border-radius: 10px;
+	padding: 12px;
+	margin-right: 10px;
+	border: none;
+	color:#8d6da1;
+	transition: border-color 0.3s ease-out;
+}
+.form-group_2 input:hover{
+	box-shadow: 0 2px 10px plum; 
+	transform: scale(1.05);
+	text-shadow: 2.3px 2.3px 5px plum;
+}
+.form-group_2 input:focus {
+  border-color: #8E44AD;
+  outline: none;
+}
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.form-group_2 input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-addon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-addon button {
+  height: 35px;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(to bottom right, #6badd0, #8d6da1);;
+  color:mediumpurple;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.input-addon button:hover{
+	box-shadow: 0 2px 10px plum; 
+	transform: scale(1.05);
+}
+
+
+.form-check {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.form-check input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.form-footer a {
+  margin-left: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 这里给关闭图标的类名添加一个:hover伪类，让鼠标悬浮在图标上时，显示一个不同的颜色，以增强用户体验 */
+.close-icon:hover {
+  filter: brightness(1.2);
+}
+.form-check>a{
+	color:mediumpurple;
+}
+/* 登录按钮 */
+.login{
+	width: auto;
+	height: auto;
+}
+#login_lo{
+	margin-top: 10px;
+	margin-left: 85px;
+	width: 150px;
+	border-radius: 20px;
+	height: 35px;
+	background:linear-gradient(to bottom right, #6badd0, #8d6da1);
+	border: none;
+	color: #8E44AD
+}
+#login_lo:hover{
+	box-shadow: 0 2px 10px plum; 
+	transform: scale(1.05);
+}
+/* 手机号错误信息 */
+#error-msg{
+	top: 10px;
+	font-size: 8px;
+	display:none;
+	color:red;
+	margin-bottom: -20px;
+	margin-top: 10px;
+}
